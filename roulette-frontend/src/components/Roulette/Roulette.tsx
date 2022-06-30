@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './Roulette.css';
+import './Roulette.scss';
 import axios from 'axios';
 import { Wheel } from 'react-custom-roulette';
 import Modal from 'react-modal';

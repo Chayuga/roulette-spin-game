@@ -1,5 +1,5 @@
 import React from 'react'
-import './ModalPage.css'
+import './ModalPage.scss'
 
 const ModalPage = ({prizeId, imageDemo, imageText, titleBg, discount, itemName, titleColor, prizeText, closeModal}: any) => {
   return (
