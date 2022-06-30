@@ -1,12 +1,23 @@
-main {
+.__mobiz-games-roulette__u-overlay { // move this to index.scss as it's a utility class
   text-align: center;
   width: 100vw;
   height: 100vh;
   background: rgba(0,0,0,0.5);
-  font-family: Arial;
+  font-family: Arial, serif;
 }
 
-.modal {
+%modal-page__btn {
+  background-color: #2A265F;
+  border: 0;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 16px;
+  padding: 12px 25px;
+  margin-top: 20px;
+  letter-spacing: 1px;
+}
+
+.__mobiz-games-roulette__modal-page {
   width: 60%;
   height: 50%;
   margin:auto;
@@ -14,70 +25,47 @@ main {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
 
-.img-container {
-  height: 60%;
-  width: 90%;
-  overflow: hidden;
-  border-radius: 30px 30px;
-  display: inline-block;
-}
-
-.img-container img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
-.text-container {
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
-  padding: 120px 0px 20px 0px;
-  border-radius: 20px;
-  background: #ffffff;
-  margin: -120px 0px 0px 0px;
-  line-height: 19px;
-  font-size: 14px;
-}
-
-.title-container{
-  padding: 10px;;
-}
-
-.text-container h3 {
-  margin: 20px 0px 10px 0px;
-  font-size: 24px;
-}
-
-.text-content{
-  margin: 10px;
-}
-
-.btn {
-  background-color: #2A265F;
-	border: 0;
-	border-radius: 50px;
-	color: #fff;
-	font-size: 16px;
-	padding: 12px 25px;
-  margin-top: 20px;
-	letter-spacing: 1px;
-}
-
-@media screen and (min-width: 480px) {
-
-  .a-box {
+  .modal-page__header {
+    height: 60%;
+    width: 90%;
+    overflow: hidden;
+    border-radius: 30px 30px;
     display: inline-block;
-    width: 100%;
-    text-align: center;
+
+    & .modal-page__header__img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
   }
-}
 
-@media screen and (man-width: 480px) {
 
-  .a-box {
-    display: flex;
-    width: 100%;
-    text-align: center;
+  .modal-page__body {
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+    padding: 120px 0px 20px 0px;
+    border-radius: 20px;
+    background: #ffffff;
+    margin: -120px 0px 0px 0px;
+    line-height: 19px;
+    font-size: 14px;
+
+
+    .modal-page__title {
+      padding: 10px;
+
+      .modal-page__text-large {
+        margin: 20px 0px 10px 0px;
+        font-size: 24px;
+      }
+    }
+
+    .modal-page__content {
+      margin: 10px;
+    }
+  }
+
+  .modal-page__btn--ok {
+    @extend %modal-page__btn;
   }
 }
