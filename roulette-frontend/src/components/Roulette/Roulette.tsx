@@ -5,8 +5,6 @@ import { Wheel } from 'react-custom-roulette';
 import Modal from 'react-modal';
 import ModalPage from '../Modal/ModalPage';
 
-
-
 // ==================================== API Structure ====================================
 const imageDemo = "https://media.istockphoto.com/photos/brown-leather-shoe-picture-id187310279?k=20&m=187310279&s=612x612&w=0&h=WDavpCxsLbj_PRpoY-3PsS2zvuP0Vk0Ci22sRLO9DzE="
 
@@ -27,12 +25,12 @@ const prizeText = `order our ${itemName} with ${discount} discount and indulge i
 const data = [
   { option: 'WINRAR' },
   { option: 'REACT' },
-  { option: 'CUSTOM' },
-  { option: 'ROULETTE', style: { textColor: '#f9dd50' } },
+  { option: 'CUSTOM', style: { textColor: '#f9dd50' }  },
+  { option: 'ROULETTE'},
   { option: 'WHEEL' },
   { option: 'REACT' },
-  { option: 'CUSTOM' },
-  { option: 'ROULETTE', style: { textColor: '#70bbe0' } },
+  { option: 'CUSTOM' , style: { textColor: '#70bbe0' } },
+  { option: 'ROULETTE'},
   { option: 'WHEEL' },
 ];
 
@@ -48,45 +46,6 @@ const radiusLineWidth = 8;
 const fontSize = 17;
 const textDistance = 60;
 const spinDuration = 1.0;
-
-// const YouWon = ({ prizeName }: { prizeName: { option: string } }) => {
-//     return (
-//         <div style={{
-//             position: "fixed",
-//             top: "50%",
-//             left: "50%",
-//             transform: "translateX(-50%) translateY(-50%)",
-//             zIndex: 999,
-//             backgroundColor: "red",
-//         }}>
-//             You have won {prizeName.option}
-//         </div>
-//     );
-// }
-
-// const Modal = ({setIsOpen}:{ setIsOpen:any}) => {
-//     return (
-//       <>
-//       <div className="darkBG" onClick={() => setIsOpen(false)}/>
-//           <div className='centered'>
-//               <div className="modal">
-//                   <div className='modalHeader'>
-//                     <h5 className='heading'>You've won a Prize</h5>
-//                     </div>
-//                     <button className='closeBtn' onClick={() => setIsOpen(false)}>
-//                         <RiCloseLine style={{marginBottom: "-3px"}} />
-//                     </button>
-//                     <div className='modalContent'>
-//                         you are a winner, your Prize Number is: <span className=''>Yeey you've won</span>
-//                     </div>
-//                     <div className='confirmBtn' onClick={() => setIsOpen(false)}>
-//                         Confirm
-//                     </div>
-//               </div>
-//           </div>
-//       </>
-//   )
-// }
 
 const Roulette = () => {
     const [mustSpin, setMustSpin] = useState(false);

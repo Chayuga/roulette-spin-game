@@ -1,6 +1,5 @@
-import { useState } from 'react'
+import React from 'react'
 import './App.scss'
-import Modal from './Modal/ModalPage'
 import Roulette from './Roulette/Roulette'
 
 
