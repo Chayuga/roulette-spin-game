@@ -4,23 +4,7 @@ import axios from 'axios';
 import { Wheel } from 'react-custom-roulette';
 import Modal from 'react-modal';
 import ModalPage from '../Modal/ModalPage';
-
-// ==================================== API Structure ====================================
-const imageDemo = "https://media.istockphoto.com/photos/brown-leather-shoe-picture-id187310279?k=20&m=187310279&s=612x612&w=0&h=WDavpCxsLbj_PRpoY-3PsS2zvuP0Vk0Ci22sRLO9DzE="
-
-const imageText = "Image Text"
-
-const discount = 20
-
-const titleBg = '#149416';
-
-const titleColor = '#ffffff'
-
-const itemName = "Leather Shoes"
-
-const prizeText = `order our ${itemName} with ${discount} discount and indulge in some well deserved self-care while at home!`
-
-// ================================== End API Structure ==================================
+import {name, description, additionalInformation, images, bg_colour, text_colour} from './data'
 
 const data = [
   { option: 'WINRAR' },
@@ -96,8 +80,8 @@ const Roulette = () => {
 
 
     return (
-        <div className="Main">
-            <header className="Main-header">
+        <div className="__mobiz-games-roulette-spin__body">
+            <div className="__mobiz-games-roulette-spin__header-section">
                 <div style={{zIndex: 0}}>
 
                 <Wheel
@@ -124,22 +108,20 @@ const Roulette = () => {
                     }}
                     />
                     </div>
-                <button className={'spin-button'} onClick={handleSpinClick}>
+                <button className={'__mobiz-games-roulette-spin_spin-button'} onClick={handleSpinClick}>
                     SPIN
                 </button>
 
                     {
                         isDone ? (
                             <>
-                            {/* <YouWon prizeName={prizeList[prizeNumber]} /> */}
-    
                                 <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles}>
-                                <ModalPage imageDemo={imageDemo} imageText={imageText} titleBg={titleBg} discount={discount} itemName={itemName} titleColor={titleColor} prizeText={prizeText} closeModal={closeModal}  />
+                                <ModalPage images={images} text_colour={text_colour} name={name} bg_colour={bg_colour} description={description} additionalInformation={additionalInformation} closeModal={closeModal}  />
                                 </Modal>
                             </>
                         ) : null
                     }
-            </header>
+            </div>
         </div>
     );
 };
