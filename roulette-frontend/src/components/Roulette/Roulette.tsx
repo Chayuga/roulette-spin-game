@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Wheel } from 'react-custom-roulette';
 import Modal from 'react-modal';
 import ModalPage from '../Modal/ModalPage';
-import {name, description, additionalInformation, images, bg_colour, text_colour} from './data'
+import {name, description, meta?.additionalInformation, meta?.images?.primary, } from './data'
 
 const data = [
   { option: 'WINRAR' },
@@ -116,7 +116,7 @@ const Roulette = () => {
                         isDone ? (
                             <>
                                 <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles}>
-                                <ModalPage images={images} text_colour={text_colour} name={name} bg_colour={bg_colour} description={description} additionalInformation={additionalInformation} closeModal={closeModal}  />
+                                <ModalPage images={meta?.images?.primary} text_colour={meta?.colours?.primary} name={name} bg_colour={meta?.colours?.secondary} description={description} additionalInformation={meta?.additionalInformation} closeModal={closeModal}  />
                                 </Modal>
                             </>
                         ) : null
