@@ -1,10 +1,17 @@
-/* eslint-disable import/no-unresolved */
-import React from 'react';
-import './App.scss';
-import Roulette from './Roulette/Roulette';
+export const name = 20;
 
-function App() {
-  /**
+export const description = 'Leather Shoes';
+
+export const additionalInformation = `order our ${description} with ${name}% discount and indulge in some well deserved self-care while at home!`;
+
+export const images = 'https://media.istockphoto.com/photos/brown-leather-shoe-picture-id187310279?k=20&m=187310279&s=612x612&w=0&h=WDavpCxsLbj_PRpoY-3PsS2zvuP0Vk0Ci22sRLO9DzE=';
+
+export const bgColour = '#149416';
+
+export const textColour = '#ffffff';
+
+// =====================================================================================================================
+/**
      * todo: add get data method here
      * eg: await Api.getPrizeList();
      *
@@ -43,12 +50,3 @@ function App() {
      *     }
      * }
      */
-
-  return (
-    <div className="App">
-      <Roulette />
-    </div>
-  );
-}
-
-export default App;
