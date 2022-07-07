@@ -8,7 +8,7 @@ import { Wheel } from 'react-custom-roulette';
 import Modal from 'react-modal';
 // eslint-disable-next-line import/no-unresolved
 import ModalPage from '../Modal/ModalPage';
-import { images, textColour, name, bgColour, description, additionalInformation } from '../../services/prizeService';
+import { images, textColour, name, bgColour, description, additionalInformation, getPrizeList } from '../../services/prizeService';
 
 const data = [
   { option: 'WINRAR' },
@@ -68,14 +68,21 @@ function Roulette() {
     }
   }
 
+  // useEffect(() => {
+  //   axios.get(`${url}http://172.17.0.1:3030/game/1`)
+  //     .then((res: any) => {
+  //       setPrizeList(res.data.game.prizes);
+  //     })
+  //     .catch((err: any) => {
+  //       console.error({ err });
+  //     });
+  // }, []);
+
   useEffect(() => {
-    axios.get(`${url}http://172.17.0.1:3030/game/1`)
-      .then((res: any) => {
-        setPrizeList(res.data.game.prizes);
-      })
-      .catch((err: any) => {
-        console.error({ err });
-      });
+    (async () => {
+      const fetchedData = await getPrizeList();
+      setPrizeList(fetchedData);
+    })();
   }, []);
 
   const handleSpinClick = () => {
