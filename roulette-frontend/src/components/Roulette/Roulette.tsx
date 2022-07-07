@@ -1,14 +1,14 @@
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable no-undef */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Roulette.scss';
 import axios from 'axios';
 import { Wheel } from 'react-custom-roulette';
 import Modal from 'react-modal';
 // eslint-disable-next-line import/no-unresolved
 import ModalPage from '../Modal/ModalPage';
-import { name, description, additionalInformation, images, bgColour, textColour } from './data';
+import { images, textColour, name, bgColour, description, additionalInformation } from '../../services/prizeService';
 
 const data = [
   { option: 'WINRAR' },
@@ -68,7 +68,7 @@ function Roulette() {
     }
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     axios.get(`${url}http://172.17.0.1:3030/game/1`)
       .then((res: any) => {
         setPrizeList(res.data.game.prizes);
@@ -128,7 +128,7 @@ function Roulette() {
           isDone ? (
             // eslint-disable-next-line react/jsx-no-bind
             <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles}>
-              <ModalPage images={images} text_colour={textColour} name={name} bg_colour={bgColour} description={description} additionalInformation={additionalInformation} closeModal={closeModal} />
+              <ModalPage images={images} textColour={textColour} name={name} bgColour={bgColour} description={description} additionalInformation={additionalInformation} closeModal={closeModal} />
             </Modal>
           ) : null
         }

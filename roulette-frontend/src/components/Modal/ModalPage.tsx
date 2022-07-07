@@ -1,7 +1,17 @@
 import React from 'react';
 import './ModalPage.scss';
 
-function ModalPage({ name, description, additionalInformation, images, bgColour, textColour, closeModal }: any) {
+export interface ModalProps {
+  name: string;
+  description: string;
+  additionalInformation: string;
+  images: string;
+  bgColour: string;
+  textColour: string;
+  closeModal: () => void;
+}
+
+function ModalPage({ name, description, additionalInformation, images, bgColour, textColour, closeModal }: ModalProps) {
   return (
     <div className="__mobiz-games-roulette__u-overlay">
       <div className="__mobiz-games-roulette__modal-page ">
